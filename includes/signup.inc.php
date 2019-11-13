@@ -29,7 +29,7 @@ if (isset($_POST['signup-submit'])){
         exit();
     }
     elseif ($password !== $passwordRepeat){
-        header("Location: ../signup.php?error=passwordcheckuid=".$username."&mail=".$email);
+        header("Location: ../signup.php?error=passwordcheck&uid=".$username."&mail=".$email);
         exit();
     }
     //если такой логин уже занят
@@ -44,7 +44,7 @@ if (isset($_POST['signup-submit'])){
         }
         else{
             //s - string, i - integer, b - blob, d - double
-            //По сути - указываем то что будем класть в датабазу - две строки - с юзернеймом, и паролем
+            //По сути - указываем то что будем класть в датабазу (если две строки - с юзернеймом, и паролем, нужно писать две буквы s)
             mysqli_stmt_bind_param($stmt, "s", $username);
             //Выполняем все это
             mysqli_stmt_execute($stmt);
