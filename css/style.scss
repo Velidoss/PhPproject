@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+@mixin logoFont($color, $fontSize) {
+    font-family: 'Pacifico', cursive;
+    font-size: $fontSize;
+    color:$color;
+}
+.logo{
+    @include logoFont(black, 24px );
+}
