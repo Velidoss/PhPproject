@@ -65,19 +65,28 @@ if (isset($_POST["reset-password-submit"])) {
 					        echo "there was an error!";
 					        exit();
 					    }else{
-					    	mysqli_stmt_bind_param($stmt, "ss", $tokenEmail);
-					    	mysqli_stmt_execute($stmt);
-			    }
+							$newPwdHash = password_hash($password, PASSWORD_DEFAULT);
+					    	mysqli_stmt_bind_param($stmt, "ss", $newPwdHash, $tokenEmail);
+							mysqli_stmt_execute($stmt);
 
-
-
-        	}
-
-        }
-    }
-
-
-}else{
+							$sql = "DELETE FROM pwdReset WHERE pwdResetEmail=?";
+							$stmt = mysqli_stmt_init($conn);
+							if (!mysqli_stmt_prepare($stmt, $sql)){
+								echo "there was an error!";
+								exit();
+							}else{
+								mysqli_stmt_bind_param($stmt, "s", $userEmail );
+								mysqli_stmt_execute($stmt);
+								header("Location:../signup.php?newpwd=passwordupdated");
+							}
+							}
+			    		}		
+        			}
+        		}
+    		}
+		}
+	}
+else{
 	header("Location: ../index.php");
 }
 

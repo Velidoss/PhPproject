@@ -35,7 +35,7 @@ if (isset($_POST["reset-request-submit"])){
     }
 
     mysqli_stmt_close($stmt);
-    mysqli_close();
+    mysqli_close($conn);
 
 
     $to = $userEmail;
@@ -44,7 +44,7 @@ if (isset($_POST["reset-request-submit"])){
     $subject = 'Reset yur password for Velidoss';
 
     $message = '<p>We received the password reset request . The link to reset your password attached below. Ignore this message if you didnt make this request</p>';
-    $message .= '<p>Here is your password reset link: </br>'
+    $message .= '<p>Here is your password reset link: </br>';
 
     $message .= '<<a href="' .$url.'">'.$url.'</a></p>';
 
