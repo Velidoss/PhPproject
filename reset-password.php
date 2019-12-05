@@ -13,7 +13,11 @@
             </form>
             <?php
             //ищем ошибку в строке браузера 
-
+                if (isset($_GET["reset"])){
+                    if ($_GET["reset"] == "success"){
+                        echo "<p class ='signupprocess'> Check your email!</p>"
+                    }
+                }
 
             ?>
            <!-- <form action="includes/signup.inc.php" method="post">
