@@ -12,7 +12,7 @@
                 <button type="submit" name="reset-request-submit">Receive new password on email</button>
             </form>
             <?php
-            //ищем ошибку в строке браузера 
+            // Ищем ошибку в строке браузера
                 if (isset($_GET["reset"])){
                     if ($_GET["reset"] == "success"){
                         echo "<p class ='signupprocess'> Check your email!</p>";

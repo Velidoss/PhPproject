@@ -6,8 +6,15 @@
     <div class="wrapper-main">  
         <section class="section-default">        
             <h1>Signup</h1>
-
             <?php
+            // Ищем ошибку в строке браузера
+            if (isset($_GET["newpwd"])){
+                if ($_GET["newpwd"] == "passwordupdated"){
+                    echo "<p class ='signupprocess'> Your password has been reset!</p>";
+                }
+            }
+
+
             //ищем ошибку в строке браузера 
                 if(isset($_GET['error'])){
                     if ($_GET['error'] == 'emptyfields'){
@@ -29,16 +36,6 @@
                 <input type="password" name="pwd-rep" placeholder="Repeat password">
                 <button type="submit" name="signup-submit">Signup</button>
             </form>
-            <?php
-            //ищем ошибку в строке браузера 
-                if (isset($_GET["newpwd"])){
-                    if ($_GET["newpwd"] == "passwordupdated"){
-                        echo "<p class ='signupprocess'> Your password has been reset!</p>";
-                    }
-                }
-
-            ?>
-            <a href="reset-passwor.php">Forgot your password?</a>
         </section> 
     </div>
 </main>
