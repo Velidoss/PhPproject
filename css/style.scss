@@ -6,7 +6,13 @@
     color:$color;
 }
 
-@mixin dispalyFlex($position, $align, $direction) {
+@mixin BodyFont($color, $fontSize) {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: $fontSize;
+    color:$color;
+}
+
+@mixin displayFlex($position, $align, $direction) {
     display: flex;
     justify-content: $position;
     align-items: $align;
@@ -21,7 +27,9 @@
 }   
 
 body{
-    background:white;
+   
+    @include BodyFont(rgb(31, 31, 31), 12 px);
+    background-image: url(images/background2.jpg);
 }
 
 .container{
@@ -38,7 +46,7 @@ background: linear-gradient(90deg, rgba(231,191,7,0.7399334733893557) 0%, rgba(2
 .heading{
     
     .navigation{
-        @include dispalyFlex(space-around,center, row);
+        @include displayFlex(space-around,center, row);
 
         padding:20px 0;
         line-height: 40px;
@@ -52,7 +60,7 @@ background: linear-gradient(90deg, rgba(231,191,7,0.7399334733893557) 0%, rgba(2
                 padding-left:20px;
                 a{
                     text-decoration: none;
-                    color:#817f76;
+                    color: #45813f;
                 }
             }
 
@@ -65,4 +73,57 @@ background: linear-gradient(90deg, rgba(231,191,7,0.7399334733893557) 0%, rgba(2
     display: flex;
     justify-content: flex-start;
  
+}
+
+.section-default{
+    @include displayFlex(space-between, center, column);
+    margin: auto
+}
+
+.login-status{
+    text-align: center;
+    margin: 15px 0;
+    padding:20px;
+    background-color: rgb(112, 177, 230);
+    border-radius: 20px;
+    border:2px, solid, rgb(187, 187, 96);
+}
+
+.user-form{
+    @include displayFlex(center, center, column);
+    form{
+        @include displayFlex(center, center, column);
+        input{
+            border:2px, solid, rgb(187, 187, 96);
+            padding:10px;
+            margin: 10px 0;
+            background-color: rgb(129, 196, 241);
+            border-radius:15px;
+            
+        }
+        button{
+            border:2px, solid, rgb(187, 187, 96);
+            padding:10px 20px;
+            color:rgb(104, 71, 71);
+            background-color: rgb(129, 196, 241);
+            border-radius:10px;
+             
+        }
+    }
+    
+}
+
+.button{
+    @include displayFlex(center, center, column);
+    margin-top:5px;
+    font-size:12px;
+    a{  
+    border:2px, solid, rgb(187, 187, 96);
+    padding:5px 5px;    
+    width:100 px;
+    color:rgb(104, 71, 71);
+    background-color: rgb(216, 224, 96);
+    border-radius:10px;
+    }
+
 }

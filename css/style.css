@@ -7,7 +7,10 @@
 }
 
 body {
-  background: white;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 12 px;
+  color: #1f1f1f;
+  background-image: url(images/background2.jpg);
 }
 
 .container {
@@ -53,7 +56,7 @@ body {
 
 .heading .navigation .menu li a {
   text-decoration: none;
-  color: #817f76;
+  color: #45813f;
 }
 
 .log-form {
@@ -63,5 +66,106 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+}
+
+.section-default {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
+}
+
+.login-status {
+  text-align: center;
+  margin: 15px 0;
+  padding: 20px;
+  background-color: #70b1e6;
+  border-radius: 20px;
+  border: 2px, solid, #bbbb60;
+}
+
+.user-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.user-form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.user-form form input {
+  border: 2px, solid, #bbbb60;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #81c4f1;
+  border-radius: 15px;
+}
+
+.user-form form button {
+  border: 2px, solid, #bbbb60;
+  padding: 10px 20px;
+  color: #684747;
+  background-color: #81c4f1;
+  border-radius: 10px;
+}
+
+.button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.button a {
+  border: 2px, solid, #bbbb60;
+  padding: 5px 5px;
+  width: 100 px;
+  color: #684747;
+  background-color: #d8e060;
+  border-radius: 10px;
 }
 /*# sourceMappingURL=style.css.map */

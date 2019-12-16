@@ -17,13 +17,13 @@ session_start();
     <div class="gradient-background">
         <div class="container">
             <nav class=navigation>
-                <a class="logo" href="#">
+                <a class="logo" href="index.php">
                     Velidoss
                 </a>
                 <ul class="menu">
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="#">Register</a></li>
-                    <li><a href="#">login</a></li>
+                    <li><a href="signup.php">Register</a></li>
+                   
                     <li><a href="#">About</a></li>
                 </ul>
             </nav>
@@ -40,17 +40,17 @@ session_start();
             else{
                 echo '
                 <div class="container">
-                    <div class = "log-form">
+                    <div class = "user-form">
                         <form action="includes/login.inc.php" method="post">
                             <input type="text" name="mailuid" placeholder="Username/Email">
                             <input type="password" name="pwd" placeholder="Password">
-                            <button type="submit" name="login-submit">login</button>
+                            <button  type="submit" name="login-submit">log in</button>
                         </form>
                     </div>
-                    <div class="signup">
-                        <a href="signup.php">Signup!</a>
+                    <div class="button signup">
+                        <a href="signup.php">Dont have an account? Signup!</a>
                     </div>
-                    <div class="forgot">
+                    <div class="button forgot">
                         <a href="reset-password.php">Forgot your password?</a>
                     </div>
                 </div>

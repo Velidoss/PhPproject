@@ -11,7 +11,7 @@
             echo '<p class="login-status">You are logged in!</p>';
         }
         else{
-            echo '<p class="login-status">You are logged out!</p>';
+            echo '<p class="login-status">You have to log in to explore everything!</p>';
         }
             ?>
         </section> 

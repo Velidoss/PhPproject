@@ -23,19 +23,21 @@
                     elseif($_GET['error'] == "invaliduid"){
                         echo '<p class = "signuperror"> Wrong email!</p>';
                     }
-                }
-                elseif ($_GET["signup" == "success"]){
+                    elseif ($_GET["signup" == "success"]){
                     echo '<p class = "signupsuccess"> Signup successfull!</p>';
                 }
-
+            }
             ?>
-            <form action="includes/signup.inc.php" method="post">
-                <input type="text" name="uid" placeholder="Username">
-                <input type="email" name="mail" placeholder="E-mail">
-                <input type="password" name="pwd" placeholder="Password">
-                <input type="password" name="pwd-rep" placeholder="Repeat password">
-                <button type="submit" name="signup-submit">Signup</button>
-            </form>
+            <div class ="user-form">
+                <form  action="includes/signup.inc.php" meth  od="post">
+                    <input type="text" name="uid" placeholder="Username">
+                    <input type="email" name="mail" placeholder="E-mail">
+                    <input type="password" name="pwd" placeholder="Password">
+                    <input type="password" name="pwd-rep" placeholder="Repeat password">
+                    <button type="submit" name="signup-submit">Signup</button>
+                </form>
+            </div>
+
         </section> 
     </div>
 </main>
