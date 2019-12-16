@@ -7,10 +7,13 @@
         <section class="section-default">        
             <h1>Reset your password</h1>
             <p>Enter your email</p>
-            <form action="includes/reset-request.inc.php" method="post">
+            <div class ="user-form">
+                <form  action="includes/reset-request.inc.php" method="post">
                 <input name="email"   type="text" placeholder="Enter your email adress ...">
                 <button type="submit" name="reset-request-submit">Receive new password on email</button>
             </form>
+            </div>
+
             <?php
             // Ищем ошибку в строке браузера
                 if (isset($_GET["reset"])){

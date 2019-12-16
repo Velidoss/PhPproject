@@ -23,7 +23,7 @@ session_start();
                 <ul class="menu">
                     <li><a href="index.php">Home</a></li>
                     <li><a href="signup.php">Register</a></li>
-                   
+                    <li><a href="login.php?login">Log in</a></li>
                     <li><a href="#">About</a></li>
                 </ul>
             </nav>
@@ -38,10 +38,13 @@ session_start();
         </form>';
             }
             else{
+                if (isset($_GET['login'])){
                 echo '
                 <div class="container">
+                    
                     <div class = "user-form">
                         <form action="includes/login.inc.php" method="post">
+                            <p>Log in</p>
                             <input type="text" name="mailuid" placeholder="Username/Email">
                             <input type="password" name="pwd" placeholder="Password">
                             <button  type="submit" name="login-submit">log in</button>
@@ -55,7 +58,9 @@ session_start();
                     </div>
                 </div>
                 
-            ';
+            ';}else{
+                
+            }
             }
         ?>
 
