@@ -43,8 +43,8 @@ if (isset($_POST['signup-submit'])){
             exit();
         }
         else{
-            //s - string, i - integer, b - blob, d - double
-            //По сути - указываем то что будем класть в датабазу (если две строки - с юзернеймом, и паролем, нужно писать две буквы s)
+
+            //По сути -проверяем есть ли  пользователь в базе с таким же логином
             mysqli_stmt_bind_param($stmt, "s", $username);
             //Выполняем все это
             mysqli_stmt_execute($stmt);
@@ -59,7 +59,7 @@ if (isset($_POST['signup-submit'])){
             }
             //если $resultCheck не больше 0, значит можно вносить юзера в датабазу
             else{
-                $sql = "INSERT INTO users (uidUsers, emailUsers, pwdUsers) VALUES (?, ?, ?)";
+                $sql = "INSERT INTO users (uidUsers, emailUsers, pwdUsers) VALUES (?, ?, ?);";
                 $stmt = mysqli_stmt_init($conn);
                 //опять же - проверяем запрос
                 if (!mysqli_stmt_prepare($stmt, $sql)){
@@ -69,9 +69,25 @@ if (isset($_POST['signup-submit'])){
                 else{
                     //Хешим пароль
                     $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
-                    //Снова берем передаваемые параметры, теперь уже 3 штуки.
+
+                    //s - string, i - integer, b - blob, d - double
+                    //По сути - указываем то что будем класть в датабазу (если две строки - с юзернеймом, и паролем, нужно писать две буквы s)
                     mysqli_stmt_bind_param($stmt, "sss", $username, $email, $hashedPwd);
                     mysqli_stmt_execute($stmt);
+                    //вставляем данніе в таблицу о картинках юзеров
+                    $sql = "SELECT * FROM users WHERE uidUsers='$username';";
+                    $resultCheck = mysqli_query($conn, $sql);
+
+                        if (mysqli_num_rows($resultCheck)>0){
+                            while($row = mysqli_fetch_assoc($resultCheck)){
+                                $userId = $row['idUsers'];
+                                $sql = "INSERT INTO profileimage (userId, status) values ('$userId', 1)";
+                                mysqli_query($conn, $sql);
+
+                            }
+                        }
+
+
                     header("Location: ../signup.php?signup=success");
                     exit();
                 }

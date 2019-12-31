@@ -29,7 +29,7 @@ if (isset($_POST['login-submit'])){
                 // проверяем есть ли в базе данных такой же пароль. ответом будет правда или лошь
                 $pwdCheck = password_verify($password, $row['pwdUsers']);
                 if ($pwdCheck == false){
-                    header("Location: ../index.php?error=wrondpwd");
+                    header("Location: ../index.php?error=wrongpwd");
                     exit();
                 }
                 elseif ($pwdCheck == true){

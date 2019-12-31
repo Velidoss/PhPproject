@@ -46,7 +46,7 @@ if (isset($_POST["reset-request-submit"])){
     $message = '<p>We received the password reset request . The link to reset your password attached below. Ignore this message if you didnt make this request</p>';
     $message .= '<p>Here is your password reset link: </br>';
 
-    $message .= '<<a href="' .$url.'">'.$url.'</a></p>';
+    $message .= '<a href="' .$url.'">'.$url.'</a></p>';
 
     $headers = "From: Velidoss <info@velidoss.fun>\r\n";
     $headers .= "Reply-To:info@velidoss.fun\r\n";

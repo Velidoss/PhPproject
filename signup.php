@@ -29,7 +29,7 @@
             }
             ?>
             <div class ="user-form">
-                <form  action="includes/signup.inc.php" meth  od="post">
+                <form  action="includes/signup.inc.php" method="post">
                     <input type="text" name="uid" placeholder="Username">
                     <input type="email" name="mail" placeholder="E-mail">
                     <input type="password" name="pwd" placeholder="Password">

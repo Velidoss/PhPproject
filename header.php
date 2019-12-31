@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -8,8 +9,8 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="static/css/style.css?t=<?php echo(microtime(true)); ?>">
+    <title>Velidoss</title>
 </head>
 <body>
 
@@ -20,24 +21,47 @@ session_start();
                 <a class="logo" href="index.php">
                     Velidoss
                 </a>
+                <form action="includes/search-post.inc.php" class="search-form" method="post">
+                    <input name="search-post" type="text" placeholder="search a post">
+                    <button name="search-post-submit" class="search-post-button" type="submit">Search post</button>
+                </form>
+                <?php
+                    if (isset($_SESSION['userId'])){
+
+                        echo '
+    
                 <ul class="menu">
                     <li><a href="index.php">Home</a></li>
                     <li><a href="signup.php">Register</a></li>
-                    <li><a href="login.php?login">Log in</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="posts.php">Latest</a></li>
+                    <li><a href="trademark-reg.php">Register a trademark</a></li>
+                    <li><a href="domain-reg.php">Register a domain name</a></li>
+                    <li><a href="account_info.php">Account</a></li>
+                    <li>
+                        <form action="includes/logout.inc.php" method="post">
+                            <button class="logout-button" type="submit" name="logout-submit">logout</button>
+                        </form>
+                    </li>
                 </ul>
+                    ';
+                    }else{
+                      echo  '<ul class="menu">
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="signup.php">Register</a></li>
+                    <li><a href="login.php?login">Log in</a></li>
+                    <li><a href="posts.php">Latest</a></li>
+                </ul>';
+                    }
+                ?>
+
+
             </nav>
 
         </div>
     </div>
     <div>
         <?php
-            if (isset($_SESSION['userId'])){
-                echo '<form action="includes/logout.inc.php" method="post">
-            <button type="submit" name="logout-submit">logout</button>
-        </form>';
-            }
-            else{
+            if (!isset($_SESSION['userId'])){
                 if (isset($_GET['login'])){
                 echo '
                 <div class="container">
@@ -47,7 +71,7 @@ session_start();
                             <p>Log in</p>
                             <input type="text" name="mailuid" placeholder="Username/Email">
                             <input type="password" name="pwd" placeholder="Password">
-                            <button  type="submit" name="login-submit">log in</button>
+                            <button type="submit" name="login-submit">log in</button>
                         </form>
                     </div>
                     <div class="button signup">
@@ -57,9 +81,8 @@ session_start();
                         <a href="reset-password.php">Forgot your password?</a>
                     </div>
                 </div>
-                
             ';}else{
-                
+
             }
             }
         ?>
