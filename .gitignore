@@ -1,4 +1,9 @@
 dbh.inc.php
+*.jpg
+*.png
+*.jpeg
+/.idea/
+/.img/
 ##### Windows
 # Windows thumbnail cache files
 Thumbs.db
