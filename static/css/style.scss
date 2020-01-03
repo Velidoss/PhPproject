@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+@mixin logoFont($color, $fontSize) {
+    font-family: 'Pacifico', cursive;
+    font-size: $fontSize;
+    color:$color;
+}
+
+@mixin BodyFont($color, $fontSize) {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: $fontSize;
+    color:$color;
+}
+
+@mixin displayFlex($position, $align, $direction) {
+    display: flex;
+    justify-content: $position;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+
+*, *::before, *::after{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}   
+
+body{
+   
+    @include BodyFont(rgb(31, 31, 31), 12 px);
+    background-color: white;
+    background-repeat: no-repeat ;
+    height: 100vh;
+}
+
+.container{
+    margin: 0 auto;
+    width:1170px;
+    padding: 0 15px;
+}
+
+.gradient-background{
+            background: rgb(231,191,7);
+background: linear-gradient(90deg, rgba(231,191,7,0.7399334733893557) 0%, rgba(245,208,83,1) 50%, rgba(250,212,85,0.908000700280112) 100%);
+}
+
+.heading{
+
+    .navigation{
+        display: flex;
+        flex-wrap: wrap;
+        z-index: 1000;
+        padding:20px 0;
+        line-height: 40px;
+        .btn-toggle-nav{
+            p{
+                opacity:0;
+            }
+
+            width: 60px;
+            height:100%;
+            background-color: orange;
+            background-image: url("images/btn-menu.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: center;
+            cursor: pointer;
+        }
+        .btn-toggle-nav:hover{
+            opacity: 0.5;
+        }
+        .logo{
+            @include logoFont(black, 24px );
+            color:rgb(202, 130, 130);
+        }
+        .menu{
+            display: flex;
+            flex-wrap: wrap;
+            padding-left:15px;
+            li{
+                list-style: none;
+                line-height: 60px;
+                a{
+                    display: block;
+                    height: 100%;
+                    padding:0 10px;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    color: #111;
+                }
+            }
+
+        }
+    }
+    
+}
+
+.nav-sidebar{
+    position:fixed;
+    left:0;
+    bottom:0;
+    width:50px;
+    padding:0 5px;
+    height:calc(100vh - 60px);
+    background-color: #1b1b1b ;
+    z-index:1000;
+    ul{
+        padding-top:15px;
+        overflow: hidden;
+        visibility: hidden;
+        li{
+            line-height:60px;
+            list-style: none;
+            span, a{
+                display: block;
+                height: 60px;
+                padding:0 10px;
+                text-decoration:none;
+                text-transform: uppercase;
+                color:white;
+                white-space: nowrap;
+            }
+            a:hover{
+                background-color: #222;
+            }
+
+        }
+    }
+}
+
+
+
+.log-form{ 
+    display: flex;
+    justify-content: flex-start;
+ 
+}
+
+.section-default{
+    @include displayFlex(space-between, center, column);
+    margin: auto
+}
+
+.login-status{
+    text-align: center;
+    margin: 15px 0;
+    padding:20px;
+    background-color: rgb(112, 177, 230);
+    border-radius: 20px;
+    border:2px solid rgb(187, 187, 96);
+}
+
+.user-form{
+    @include displayFlex(center, center, column);
+    form{
+        @include displayFlex(center, center, column);
+        input{
+            border:2px solid rgb(187, 187, 96);
+            padding:10px;
+            margin: 10px 0;
+            background-color: rgb(129, 196, 241);
+            border-radius:15px;
+            
+        }
+        button{
+            border:2px solid rgb(187, 187, 96);
+            padding:10px 20px;
+            color:rgb(104, 71, 71);
+            background-color: rgb(129, 196, 241);
+            border-radius:10px;
+             
+        }
+    }
+    
+}
+
+.button{
+    @include displayFlex(center, center, column);
+    margin-top:5px;
+    font-size:12px;
+    a{  
+    border:2px solid rgb(187, 187, 96);
+    padding:5px 5px;    
+
+    color:rgb(104, 71, 71);
+    background-color: rgb(216, 224, 96);
+    border-radius:10px;
+    }
+
+}
+
+footer{
+    position: relative;
+
+}
+
+.centered{
+    display: flex;
+    justify-content: center;
+}
+
+.post{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color:lightblue;
+    margin-top:20px;
+    width:80%;
+    border-radius: 20px;
+    h2{
+        color: rgb(27, 104, 73);
+        padding-top:20px;
+    }
+    p{
+        padding:5px 50px;
+    }
+}
+
+.make-post{
+    @include displayFlex(space-around, center, column);
+    .make-post-form{
+        @include displayFlex(space-around, center, column);
+
+    }
+
+}
+
+.error-message{
+    color:#E51C1C;
+    font-size:12px;
+}
+.success-message{
+    color:#329D49;
+    font-size:12px;
+}
+.logout-button{
+    @include displayFlex(center, center, column);
+    border:2px solid rgb(187, 187, 96);
+    padding:10px;
+    margin: 15px 0;
+    background-color: rgb(129, 196, 241);
+    border-radius:15px;
+
+}
+
+.contact{
+    width:100%;
+    .contact-form{
+        @include displayFlex(center, center, column);
+        .contact-form-name .contact-form-email{
+            @include displayFlex(center, center, row);
+        }
+    }
+}
+
+.user-info-img {
+    img {
+        width: 200px;
+        height: 200px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+//trademark gallery
+
+.gallery-container{
+    @include displayFlex(flex-start, flex-start, row);
+    flex-wrap: wrap;
+}
+
+.gallery-container a{
+    text-decoration: none;
+    color:black;
+    width: 235px;
+    margin: 20px 10px 0;
+}
+
+.gallery-container a:hover{
+    opacity: 0.8;
+}
+
+.gallery-container a div{
+    width: 100%;
+    height:235px;
+
+    
+}
