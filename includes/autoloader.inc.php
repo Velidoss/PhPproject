@@ -2,15 +2,15 @@
 
 spl_autoload_register('myAutoLoader');
 function myAutoLoader($className){
-    $url = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+    $path = 'classes/';
+    $extension = '.class.php'; 
+    $filename =  $path . $className . $extension;
 
-    if(strpos($url, 'includes') !==false){
-        $path = '../classes/';
-    }else{
-        $path = '/classes/';
+    if (!file_exists($filename)){
+        return false;
     }
-    $extension = '.class.php';
-    require_once $path . $className . $extension;
+
+    include_once $path. $className. $extension;
 }
 
 

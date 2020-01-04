@@ -1,7 +1,7 @@
 <?php
-include_once "includes/dbh.inc.php";
+//include_once "includes/dbh.inc.php";
 include "header.php";
-
+include 'includes/autoloader.inc.php';
 ?>
 <?php
 
@@ -11,7 +11,7 @@ if (isset($_SESSION['userId'])){
                 <div class="container ">
                 <button type="button" class="make-post-trigger">Make a post!</button>
                     <div class="make-post collapse">
-                        <form action="includes/create-post.inc.php" class="make-post-form" method="post">
+                        <form action="classes/Posts.class.php" class="make-post-form" method="post">
                             <label for="postname">Enter posts name </label>
                             <input name="postname" type="text">
                             <label for="postcategory">Enter posts category </label>
@@ -43,6 +43,7 @@ elseif(strpos($fullUrl, "error=emptypostcategory")==true){
 elseif(strpos($fullUrl, "error=emptypostcontent")==true){
     echo "<p class='error-message'>You did not filled post content!</p>";
 }
+/*
     $sql = "SELECT * FROM posts limit 0,3;";
     $result = mysqli_query($conn, $sql);
     $resultCheck = mysqli_num_rows($result);
@@ -65,6 +66,10 @@ elseif(strpos($fullUrl, "error=emptypostcontent")==true){
         }
         
     }
+
+*/
+    $createPosts = new Usersview();
+    $createPosts->showUsers("Test55");
 
 
 ?>
