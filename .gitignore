@@ -1,10 +1,18 @@
 dbh.inc.php
+<<<<<<< HEAD
 /.idea/
 /uploads/
 /img/
 *.jpg
 *.jpeg
 *.png
+=======
+*.jpg
+*.png
+*.jpeg
+/.idea/
+/.img/
+>>>>>>> cbd2e291025bc35e74332a5f73c7e33ef3394b56
 ##### Windows
 # Windows thumbnail cache files
 Thumbs.db

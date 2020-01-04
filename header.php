@@ -18,7 +18,10 @@ session_start();
     <div class="gradient-background">
         <div class="container">
             <nav class=navigation>
+<<<<<<< HEAD
                 <div class="btn-toggle-nav" onclick="toggleNav()"><p>Menu</p></div>
+=======
+>>>>>>> cbd2e291025bc35e74332a5f73c7e33ef3394b56
                 <a class="logo" href="index.php">
                     Velidoss
                 </a>
@@ -38,7 +41,10 @@ session_start();
                     <li><a href="trademark-reg.php">Register a trademark</a></li>
                     <li><a href="domain-reg.php">Register a domain name</a></li>
                     <li><a href="account_info.php">Account</a></li>
+<<<<<<< HEAD
                     <li><a href="calc.php">Calculator</a></li>
+=======
+>>>>>>> cbd2e291025bc35e74332a5f73c7e33ef3394b56
                     <li>
                         <form action="includes/logout.inc.php" method="post">
                             <button class="logout-button" type="submit" name="logout-submit">logout</button>
@@ -58,6 +64,7 @@ session_start();
 
 
             </nav>
+<<<<<<< HEAD
             <aside class="nav-sidebar">
                 <?php
                     if (isset($_SESSION['userId'])){
@@ -78,6 +85,9 @@ session_start();
                     ';
                     }?>
             </aside>
+=======
+
+>>>>>>> cbd2e291025bc35e74332a5f73c7e33ef3394b56
         </div>
     </div>
     <div>

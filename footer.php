@@ -22,7 +22,10 @@
 </footer>
 
 </body>
+<<<<<<< HEAD
 <script src="static/js/scripts.js"></script>
 <script src="static/js/calculator.js"></script>
 <script src="static/js/toggle-menu.js"></script>
+=======
+>>>>>>> cbd2e291025bc35e74332a5f73c7e33ef3394b56
 </html>
