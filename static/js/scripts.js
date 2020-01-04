@@ -1,14 +1,24 @@
+
+function Person(name, eyeColor, age){
+    this.name = name;
+    this.eyeColor = eyeColor;
+    this.age = age;
+    this.updateAge = function(){
+      return ++this.age;
+    };
+}
+
+let person01 = new Person("Yurii", "Grey", 25);
+
+console.log(person01.updateAge());
+
+
+/*
 var a = function(){
     var a =20;
     return a;
 }
 
-console.log(a());
-
-
-
-
-/*
 function testExample(name, age) {
     let greeting = "Hi, my name is " + name +" ,nice to meet you!, I am "+ age +" tears old";
     return greeting;

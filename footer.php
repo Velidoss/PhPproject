@@ -24,4 +24,5 @@
 </body>
 <script src="static/js/scripts.js"></script>
 <script src="static/js/calculator.js"></script>
+<script src="static/js/toggle-menu.js"></script>
 </html>

@@ -105,6 +105,7 @@ background: linear-gradient(90deg, rgba(231,191,7,0.7399334733893557) 0%, rgba(2
     height:calc(100vh - 60px);
     background-color: #1b1b1b ;
     z-index:1000;
+    transition: all 0.3s ease-in-out;
     ul{
         padding-top:15px;
         overflow: hidden;
@@ -120,6 +121,8 @@ background: linear-gradient(90deg, rgba(231,191,7,0.7399334733893557) 0%, rgba(2
                 text-transform: uppercase;
                 color:white;
                 white-space: nowrap;
+                opacity:1;
+                transition: all 0.3s ease-in-out;
             }
             a:hover{
                 background-color: #222;

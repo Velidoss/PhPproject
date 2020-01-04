@@ -18,7 +18,7 @@ session_start();
     <div class="gradient-background">
         <div class="container">
             <nav class=navigation>
-                <div class="btn-toggle-nav"><p>Menu</p></div>
+                <div class="btn-toggle-nav" onclick="toggleNav()"><p>Menu</p></div>
                 <a class="logo" href="index.php">
                     Velidoss
                 </a>
@@ -65,14 +65,14 @@ session_start();
                         echo '
     
                 <ul class="menu">
-                <span>Menu</span>
-                    <li><span href="index.php">Home</span></li>
-                    <li><span href="signup.php">Register</span></li>
-                    <li><span href="posts.php">Latest</span></li>
-                    <li><span href="trademark-reg.php">Register a trademark</span></li>
-                    <li><span href="domain-reg.php">Register a domain name</span></li>
-                    <li><span href="account_info.php">Account</span></li>
-                    <li><span href="calc.php">Calculator</span></li>
+                    <li><span>Menu</span></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="signup.php">Register</a></li>
+                    <li><a href="posts.php">Latest</a></li>
+                    <li><a href="trademark-reg.php">Register a trademark</a></li>
+                    <li><a href="domain-reg.php">Register a domain name</a></li>
+                    <li><a href="account_info.php">Account</a></li>
+                    <li><a href="calc.php">Calculator</a></li>
 
                 </ul>
                     ';
