@@ -70,7 +70,8 @@ elseif(strpos($fullUrl, "error=emptypostcontent")==true){
 */
     $createPosts = new Usersview();
     $createPosts->showUsers("Test55");
-
+    $showPosts = new Usersview();
+    $showPosts->showPosts();
 
 ?>
 

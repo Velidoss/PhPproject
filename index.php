@@ -1,5 +1,11 @@
 <?php
     require 'header.php';
+    define ('ROOT', dirname(__FILE__));
+    require_once(ROOT.'/app/core/Router.php');
+    
+    $router = new Router();
+    $router->run();
+
 ?>
 
 <main>

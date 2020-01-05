@@ -19,4 +19,18 @@ class Users extends Dbh {
 
     }
 
+    protected function getPosts(){
+        $sql = "SELECT * FROM posts limit 0,3";
+        //query  -встроенная функция в PDO
+        $stmt = $this->connect()->query($sql);
+        $row = $stmt->fetchAll();
+        return $row;
+        }
+
+    protected function trdmReg($trdmOwner, $trdmName, $trdmDateCreated){
+        $sql = "INSERT INTO trademarks (trdmOwner, trdmName, trdmDateCreated) values (?, ?, ?)";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$trdmOwner, $trdmName, $trdmDateCreated]);
+    }
 }
+

@@ -2,8 +2,8 @@
 
 class Userscntr extends Users{
     
-    public function createUser($newUserName){
-        $this->setUser($newUserName);
-    }
+    public function trdmUserReg($trdmOwner, $trdmName, $trdmDateCreated){
+        $this->trdmReg($trdmOwner, $trdmName, $trdmDateCreated);
+    }   
 
 }
