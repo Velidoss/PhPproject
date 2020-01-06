@@ -27,26 +27,37 @@ class Router {
             //Всегда использовать двойные кавычки!
             //Теперь сравниваем паттерн и uri
             if (preg_match("~$uriPattern~", $uri)){
+                //Получаем внутренний путь к контрллеру из внешнего
+                $internalRoute = preg_replace("~$uriPattern~", $path, $uri);
                 //Определить соответствующий контроллер для запрсоа
-                $elements = explode('/', $path); 
-                
+                $elements = explode('/', $internalRoute); 
+
                 $controllerName = array_shift($elements).'Controller';
                 //Теперь мы получили название контроллера
                 $controllerName = ucfirst($controllerName);
 
                 $actionName = 'action'.ucfirst(array_shift($elements));
                 //Подключаем файл запроса контроллера
+
+                echo '<br>controller name:'.$controllerName;
+                echo '<br>action name:'.$actionName;
+                $parameters = $elements;
+                echo '<pre>';
+                print_r($parameters);
+                
+
                 $controllerFile = ROOT.'/app/controllers/'.$controllerName.'.php';
-                echo  $controllerName;
-                echo  $controllerFile;
+
 
                 if (file_exists($controllerFile)){
                     include_once($controllerFile);
                 }
                 //Создать обект, вызвать метод
                 $controllerObject  = new $controllerName;
+                
+                $result = call_user_func_array(array($controllerObject, $actionName), $parameters);
               
-                $result = $controllerObject->$actionName();
+                //$result = $controllerObject->$actionName();
                 if($result !=null){
                     break;
                 }

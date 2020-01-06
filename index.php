@@ -2,10 +2,20 @@
     require 'header.php';
     define ('ROOT', dirname(__FILE__));
     require_once(ROOT.'/app/core/Router.php');
-    
+
     $router = new Router();
     $router->run();
+/*
+    $testString = '21-11-2019';
 
+    $pattern = '/([0-9]{2})-([0-9]{2})-([0-9]{4})/';
+
+    $replacement = "Рік $3, Місяць $2, день $1";
+
+    echo preg_replace($pattern, $testString, $replacement);
+
+    die;
+    */
 ?>
 
 <main>
