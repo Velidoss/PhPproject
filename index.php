@@ -1,10 +1,15 @@
 <?php
     require 'header.php';
-    define ('ROOT', dirname(__FILE__));
-    require_once(ROOT.'/app/core/Router.php');
-
-    $router = new Router();
-    $router->run();
+    use app\core\Router;
+    
+    spl_autoload_register(function($class){
+        $path = str_replace('\\', '/', $class.'.php');
+      
+        if (file_exists($path)){
+            require $path;
+        }
+    });
+    
 /*
     $testString = '21-11-2019';
 
@@ -19,6 +24,13 @@
 ?>
 
 <main>
+    <div class="container">
+        <?php
+            $router = new Router();
+            $router->run();
+           
+        ?>
+    </div>
     <div class="wrapper-main">  
         <section class="section-default">  
 

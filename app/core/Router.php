@@ -1,10 +1,56 @@
 <?php
 
+namespace app\core;
+
 class Router {
 
-    protected $routes;
-    //protected $params = [];
+    protected $routes = [];
+    protected $params = [];
 
+    public function __construct(){
+        $arr = require 'app/config/routes.php';
+        //debug($arr);
+        //Данный цикл разбирает маршрут на ключи и значения
+        foreach($arr as $key=>$val){
+            $this->add($key, $val);
+        }
+        
+    }
+
+    public function add($route, $params){
+        $route = '#^'.$route.'$#';
+        $this->routes[$route] = $params;
+    }
+        //Проверяет наличие функции/метода
+    public function match(){
+        $url = trim($_SERVER['REQUEST_URI'], '/');
+        var_dump($url);
+        foreach ($this->routes as $route=>$params){
+            if(preg_match($route, $url, $matches)){
+                $this->params = $params;
+                return true;
+            }
+        }
+        return false; 
+    }
+
+    public function run(){
+        if($this->match()){
+            $controller = 'app\\controllers\\'.ucfirst($this->params['controller'].'Controller.php');
+            if (class_exists($controller)){
+                echo 'OK';
+            }else{
+                echo 'не найден'.$controller;
+            };
+        }else{
+            echo 'Маршрут не наден';
+        }
+        ;
+    }
+
+
+    //Закоментирована часть другого видеоурока.
+    /*
     public function __construct(){
         //при візове класса теперь будет выполняться подключение к списку марштуротов
         $routesPath = ROOT.'/app/config/routes.php';
@@ -69,6 +115,6 @@ class Router {
         
         
     }
-    
+    */
 
 }
