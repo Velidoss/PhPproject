@@ -9,8 +9,10 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="static/css/style.css?t=<?php echo(microtime(true)); ?>">
-    <title>Velidoss</title>
+    <link rel="stylesheet" href="../static/css/style.css?t=<?php echo(microtime(true)); ?>">
+    <title><?php
+    echo $title;
+?></title>
 </head>
 <body>
 
@@ -68,7 +70,7 @@ session_start();
                     <li><span>Menu</span></li>
                     <li><a href="index.php">Home</a></li>
                     <li><a href="signup.php">Register</a></li>
-                    <li><a href="posts">Latest</a></li>
+                    <li><a href="posts.php">Latest</a></li>
                     <li><a href="trademark-reg.php">Register a trademark</a></li>
                     <li><a href="domain-reg.php">Register a domain name</a></li>
                     <li><a href="account_info.php">Account</a></li>
@@ -110,3 +112,35 @@ session_start();
 
     </div>
 </header>
+<?php
+    echo $content;
+?>
+<div class="container">
+    <div class="contact">
+        <form action="includes/contact-send.inc.php" class="contact-form" method="post">
+            <input class="contact-form-name" name ="contact-name" type="text" placeholder="Write your name">
+            <input class="contact-form-email" name ="contact-email" type="email" placeholder="Write your email">
+            <input class="contact-form-subject" name ="contact-subject" type="text" placeholder="Write subject">
+            <textarea class="contact-form-text" name="contact-text"  cols="30" rows="10"></textarea>
+            <button name="contact-submit" class="contact-submit" >Submit your message</button>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="sm_content">
+            <p>&copy; Created by Velidoss</p>
+            <p>Its a joke site.Not for a commercial use</p>
+        </div>
+
+    </div>
+</footer>
+
+</body>
+
+<script src="static/js/scripts.js"></script>
+<script src="static/js/calculator.js"></script>
+<script src="static/js/toggle-menu.js"></script>
+
+</html>

@@ -5,20 +5,21 @@ namespace app\controllers;
 
 use app\core\Controller;
 
-class PostsController extends Controller {
+class MainController extends Controller {
 
 
-
-    public function postslistAction(){
-        //$this->view->redirect('/'); 
-        $this->view->render('Список постов');
+    public function indexAction(){
+        $vars = [
+            'name'=>"Yurii",
+            'age'=>25,
+            
+        ];
+        $this->view->redirect('/'); 
+        $this->view->render('Главная страница', $vars);
+        //echo 'Главная страница';
     }
 
-    public function makepostAction(){
-        //можно указать путь к шаблону, если он называется не так как в роутах
-        $this->view->render('Написать пост ');
-        
-    }
+   
     /*
     public function actionIndex(){
 

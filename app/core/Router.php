@@ -2,6 +2,8 @@
 
 namespace app\core;
 
+use app\core\View;
+
 class Router {
 
     protected $routes = [];
@@ -24,7 +26,7 @@ class Router {
         //Проверяет наличие функции/метода
     public function match(){
         $url = trim($_SERVER['REQUEST_URI'], '/');
-        var_dump($url);
+        
         foreach ($this->routes as $route=>$params){
             if(preg_match($route, $url, $matches)){
                 $this->params = $params;
@@ -36,14 +38,22 @@ class Router {
 
     public function run(){
         if($this->match()){
-            $controller = 'app\\controllers\\'.ucfirst($this->params['controller'].'Controller.php');
-            if (class_exists($controller)){
-                echo 'OK';
+            $path = 'app\controllers\\'.ucfirst($this->params['controller'].'Controller');
+            //Проверка на наличие класса
+            if (class_exists($path)){
+                //Подключение на наличие метода
+                $action = $this->params['action'].'Action';
+                if(method_exists($path, $action)){
+                    $controller = new $path($this->params) ;
+                    $controller->$action();
+                }else{
+                    View::errorCode(404);
+                }
             }else{
-                echo 'не найден'.$controller;
+                View::errorCode(404);
             };
         }else{
-            echo 'Маршрут не наден';
+            View::errorCode(403);
         }
         ;
     }

@@ -28,7 +28,8 @@
         <?php
             $router = new Router();
             $router->run();
-           
+            echo 'Имя:'.$name;
+            echo 'Возраст:'.$age;
         ?>
     </div>
     <div class="wrapper-main">  
