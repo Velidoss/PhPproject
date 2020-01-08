@@ -4,17 +4,17 @@
 namespace app\controllers;
 
 use app\core\Controller;
-
+// Данный класс наследует главный класс контроллера, и вызывает его методы
 class MainController extends Controller {
 
-
+    //Данный метод класса вызывается роутером в ответ на соответствующий запрос в строке браузера
     public function indexAction(){
         $vars = [
             'name'=>"Yurii",
             'age'=>25,
-            
         ];
-        $this->view->redirect('/'); 
+        //
+       // $this->view->redirect('/'); 
         $this->view->render('Главная страница', $vars);
         //echo 'Главная страница';
     }
