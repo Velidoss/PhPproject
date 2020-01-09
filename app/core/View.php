@@ -14,6 +14,7 @@ class View{
     public function __construct($route)
     {
         $this->route = $route; 
+        //Имя контроллера - это папка в views, имя метода - сам файл шаблона.
         $this->path = $route['controller'].'/'.$route['action'];
         
     }

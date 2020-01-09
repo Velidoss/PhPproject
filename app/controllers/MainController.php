@@ -15,6 +15,7 @@ class MainController extends Controller {
         ];
         //
        // $this->view->redirect('/'); 
+       //Данная переменная вызывает метод render из класса View, который был наследован главным контроллером
         $this->view->render('Главная страница', $vars);
         //echo 'Главная страница';
     }

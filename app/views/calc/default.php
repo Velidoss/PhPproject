@@ -1,6 +1,4 @@
-<?php
-require "header.php";
-?>
+
 
 <form action="calculator.js">
     <input type="text" id="value1">
@@ -18,6 +16,3 @@ require "header.php";
         <p>The result is - </p><span id="result"></span>
     </div>
 
-<?php
-require "footer.php";
-?>

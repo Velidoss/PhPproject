@@ -38,7 +38,7 @@ session_start();
                     <li><a href="trademark-reg.php">Register a trademark</a></li>
                     <li><a href="domain-reg.php">Register a domain name</a></li>
                     <li><a href="account_info.php">Account</a></li>
-                    <li><a href="calc.php">Calculator</a></li>
+                    <li><a href="calc">Calculator</a></li>
                     <li>
                         <form action="includes/logout.inc.php" method="post">
                             <button class="logout-button" type="submit" name="logout-submit">logout</button>
@@ -72,7 +72,7 @@ session_start();
                     <li><a href="trademark-reg.php">Register a trademark</a></li>
                     <li><a href="domain-reg.php">Register a domain name</a></li>
                     <li><a href="account_info.php">Account</a></li>
-                    <li><a href="calc.php">Calculator</a></li>
+                    <li><a href="calc">Calculator</a></li>
 
                 </ul>
                     ';

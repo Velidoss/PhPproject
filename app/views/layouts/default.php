@@ -1,7 +1,4 @@
-<?php
-session_start();
 
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +18,7 @@ session_start();
         <div class="container">
             <nav class=navigation>
                 <div class="btn-toggle-nav" onclick="toggleNav()"><p>Menu</p></div>
-                <a class="logo" href="index.php">
+                <a class="logo" href="index">
                     Velidoss
                 </a>
                 <form action="includes/search-post.inc.php" class="search-form" method="post">
@@ -34,13 +31,13 @@ session_start();
                         echo '
     
                 <ul class="menu">
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="signup.php">Register</a></li>
-                    <li><a href="posts.php">Latest</a></li>
-                    <li><a href="trademark-reg.php">Register a trademark</a></li>
-                    <li><a href="domain-reg.php">Register a domain name</a></li>
-                    <li><a href="account_info.php">Account</a></li>
-                    <li><a href="calc.php">Calculator</a></li>
+                    <li><a href="index">Home</a></li>
+                    <li><a href="signup">Register</a></li>
+                    <li><a href="posts">Latest</a></li>
+                    <li><a href="trademark-reg">Register a trademark</a></li>
+                    <li><a href="domain-reg">Register a domain name</a></li>
+                    <li><a href="account_info">Account</a></li>
+                    <li><a href="calc">Calculator</a></li>
                     <li>
                         <form action="includes/logout.inc.php" method="post">
                             <button class="logout-button" type="submit" name="logout-submit">logout</button>
@@ -50,10 +47,10 @@ session_start();
                     ';
                     }else{
                       echo  '<ul class="menu">
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="signup.php">Register</a></li>
-                    <li><a href="login.php?login">Log in</a></li>
-                    <li><a href="posts.php">Latest</a></li>
+                    <li><a href="index">Home</a></li>
+                    <li><a href="signup">Register</a></li>
+                    <li><a href="login">Log in</a></li>
+                    <li><a href="posts">Latest</a></li>
                 </ul>';
                     }
                 ?>
@@ -68,13 +65,13 @@ session_start();
     
                 <ul class="menu">
                     <li><span>Menu</span></li>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="signup.php">Register</a></li>
-                    <li><a href="posts.php">Latest</a></li>
-                    <li><a href="trademark-reg.php">Register a trademark</a></li>
-                    <li><a href="domain-reg.php">Register a domain name</a></li>
-                    <li><a href="account_info.php">Account</a></li>
-                    <li><a href="calc.php">Calculator</a></li>
+                    <li><a href="index">Home</a></li>
+                    <li><a href="signup">Register</a></li>
+                    <li><a href="posts">Latest</a></li>
+                    <li><a href="trademark-reg">Register a trademark</a></li>
+                    <li><a href="domain-reg">Register a domain name</a></li>
+                    <li><a href="account_info">Account</a></li>
+                    <li><a href="calc">Calculator</a></li>
 
                 </ul>
                     ';
@@ -98,7 +95,7 @@ session_start();
                         </form>
                     </div>
                     <div class="button signup">
-                        <a href="signup.php">Dont have an account? Signup!</a>
+                        <a href="signup">Dont have an account? Signup!</a>
                     </div>
                     <div class="button forgot">
                         <a href="reset-password.php">Forgot your password?</a>

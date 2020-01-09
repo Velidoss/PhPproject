@@ -4,6 +4,8 @@ namespace app\core;
 
 use app\core\View;
 
+
+//Данный класс определяет какой контроллер, и какой его метод нужно подключать
 class Router {
 
     protected $routes = [];
@@ -38,13 +40,16 @@ class Router {
 
     public function run(){
         if($this->match()){
+            //Определение контроллера
             $path = 'app\controllers\\'.ucfirst($this->params['controller'].'Controller');
             //Проверка на наличие класса
             if (class_exists($path)){
-                //Подключение на наличие метода
+                //Определение метода
                 $action = $this->params['action'].'Action';
                 if(method_exists($path, $action)){
+                    //Создание объекта контроллера
                     $controller = new $path($this->params) ;
+                    //Вызов соответствующего егое метода. Дальше идет код в контроллере.
                     $controller->$action();
                 }else{
                     View::errorCode(404);
