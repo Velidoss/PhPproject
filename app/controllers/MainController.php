@@ -4,7 +4,7 @@
 namespace app\controllers;
 
 use app\core\Controller;
-use app\lib\Dbh;
+
 // Данный класс наследует главный класс контроллера, и вызывает его методы
 class MainController extends Controller {
 

@@ -1,8 +1,15 @@
 <p>Главная страница</p>
 <?php
 
-foreach ($posts as $val):?>
-    <h3><?php echo $val['postTitle']; ?></h3>
-    <p><?php echo $val['postContent']; ?></p>
-    <hr>
-<?php endforeach;  ?>
+foreach ($posts as $val){
+    echo '
+        <div class="container centered">
+            <div class="post">
+                <h2>'.$val['postTitle'].'</h2>
+                <p>'.$val['postContent'].'</p>
+                <p>'.$val['postDateTime'].'</p>
+                <p>'.$val['postCategory'].'</p>
+            </div>
+        </div>';
+}
+    

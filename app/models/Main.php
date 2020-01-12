@@ -11,5 +11,4 @@ class Main extends Model{
         $result = $this->db->row('SELECT * FROM posts limit 3');
         return $result;
     }
-
 }

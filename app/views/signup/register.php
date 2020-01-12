@@ -22,10 +22,26 @@
                     elseif ($_GET["signup" == "success"]){
                     echo '<p class = "signupsuccess"> Signup successfull!</p>';
                 }
+            }                
+
+            function lul(){            
+                $sql = 'Запрос';
+                $params = ['login', 'pwd', 'email'];
+                if(!empty($params)){
+                foreach($params as $key => $val){
+                    echo $key.'=>'.$val;
+                }
             }
-            ?>
+        }
+        $func = lul();
+        ?>
+        
+         
+
+        
+    
             <div class ="user-form">
-                <form  action="includes/signup.inc.php" method="post">
+                <form  action="" method="post">
                     <input type="text" name="uid" placeholder="Username">
                     <input type="email" name="mail" placeholder="E-mail">
                     <input type="password" name="pwd" placeholder="Password">

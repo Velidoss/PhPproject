@@ -28,6 +28,17 @@ class Dbh{
  
     }
 
+    public function bind($sql, $params=[]){
+        $stmt = $this->db->prepare($sql);
+        if(!empty($params)){
+            foreach($params as $key => $val){
+                $stmt->bindParam(':'.$key, $val);
+            }
+        } 
+        $stmt->execute();
+        
+    }
+
     public function row($sql, $params=[]){
         $result =$this->query($sql, $params);
         //Fetch assoc - передает ассоциативный массив без индексов
@@ -38,5 +49,7 @@ class Dbh{
         $result =$this->query($sql, $params);
         return $result->fetchColumn();
     }
+
+
 
 }
