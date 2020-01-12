@@ -14,10 +14,20 @@ abstract class Controller{
     public function __construct($route)
     {
         $this->route = $route;
-        $this->view = new View($route);
-
+        $this->view = new View($route); 
+        //Получается так, что имя модели соответствует имени котроллера только без приставки controller 
+        $this->model = $this->loadModel($route['controller']);
+        //var_dump($this->model);
     }
 
+    public function loadModel($name){
+        //Нужно указать путь с обратными слешами
+        $path = 'app\models\\'.ucfirst($name);
+        if (class_exists($path)){
+            //Собственно, здесь мы инстанциируем обект нужной нам модели
+            return new $path();
+        }
+    }
 
 }
 

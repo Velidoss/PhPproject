@@ -1,4 +1,8 @@
 <p>Главная страница</p>
 <?php
-echo $title;
-var_dump($this->route);
+
+foreach ($posts as $val):?>
+    <h3><?php echo $val['postTitle']; ?></h3>
+    <p><?php echo $val['postContent']; ?></p>
+    <hr>
+<?php endforeach;  ?>
